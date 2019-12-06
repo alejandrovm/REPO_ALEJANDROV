@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace ClassExercises
 {
-    class Program
+    class Stats
     {
-        static void Main (string[] args)
-        {
-            Character character = new Character ();
-
-        }
+        public int STR;
+        public int DEX;
+        public int CON;
     }
 }

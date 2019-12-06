@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace ClassExercises
 {
-    class Program
+    class Wizard : Character
     {
-        static void Main (string[] args)
-        {
-            Character character = new Character ();
+        public int mp;
 
+        public Wizard (string name, int mp) : base (name)
+        {
+            this.mp = mp;
         }
     }
 }

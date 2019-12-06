@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClassExercises
 {
-    class Program
+    class Warrior : Character
     {
-        static void Main (string[] args)
-        {
-            Character character = new Character ();
+        public int stamina;
 
+        public Warrior (string name) : base (name)
+        {
         }
     }
 }
