@@ -6,7 +6,8 @@ namespace TextAdventure
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Adventure Game!");
+            Console.ReadKey();
         }
     }
 }
