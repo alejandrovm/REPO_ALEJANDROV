@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure", "TextAdventure\TextAdventure.csproj", "{92C22511-080A-4874-97C8-B16BC428ECE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92C22511-080A-4874-97C8-B16BC428ECE5}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{92C22511-080A-4874-97C8-B16BC428ECE5}.Debug|anycpu.Build.0 = Debug|anycpu
+		{92C22511-080A-4874-97C8-B16BC428ECE5}.Release|anycpu.ActiveCfg = Release|anycpu
+		{92C22511-080A-4874-97C8-B16BC428ECE5}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal
