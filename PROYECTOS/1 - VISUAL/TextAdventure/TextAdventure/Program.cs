@@ -12,6 +12,9 @@ namespace TextAdventure
 {
     public static class Game
     {
+        //scenarios number
+        static int Scenarios = 3;
+
         //character name
         static string CharacterName = "";
 
@@ -57,6 +60,7 @@ namespace TextAdventure
             NameCharacter();
             MainStory();
             TrailChoice();
+            EndGame();
         }
         //ask player for a name, and save it
         static void NameCharacter()
@@ -76,21 +80,52 @@ namespace TextAdventure
             Console.ReadKey();
             Console.WriteLine("You've been on the Triboar Trail for about half a day. As you come around a bend, you spot two dead horses sprawled about fifty feet ahead of you, blocking the path. Each has several black-feathered arrows sticking out of it. The woods press close to the trail here, with a steep embankment and dense thickets on either side.");
         }
+
         static void TrailChoice()
         {
-            string trailinput = "";
-            Console.WriteLine(CharacterName + " Do you A : approach the dead horses? or B : keep going your way?");
-            Console.WriteLine("Write A or B");
-            trailinput = Console.ReadLine();
-            trailinput = trailinput.ToUpper();
-            if (trailinput == "A")
+            for (int scenario = 1; scenario <= Scenarios; scenario++)
             {
-                Console.WriteLine("You identify the horses as belonging to Gundren Rockseeker and Sildar Hallwinter. It's clear that arrows killed the horses. The saddlebags have been looted and nearby lies an empty leather map case. Also from when you are standing, you see a small group of GOBLINS hiding in the woods, they see you and run away inmediatly.");
+                string trailinput = "";
+                switch (trailinput)
+                {
+                    case 1:
+                        //if scenario equals 1, statements here run
+                        break;
+
+                    case 2:
+                        //if scenario  equals 2, statements here run
+                        break;
+                    case 3:
+                        //if scenario  equals 3, statements here run
+                        break;
+
+                    default:
+                        //if scenario does not match any above
+                        break;
+                }
+
+                /*
+                Console.WriteLine(CharacterName + " Do you A : approach the dead horses? or B : keep going your way?");
+                Console.WriteLine("Write A or B");
+                trailinput = Console.ReadLine();
+                trailinput = trailinput.ToUpper();
+                if (trailinput == "A")
+                {
+                    Console.WriteLine("You identify the horses as belonging to Gundren Rockseeker and Sildar Hallwinter. It's clear that arrows killed the horses. The saddlebags have been looted and nearby lies an empty leather map case. Also from when you are standing, you see a small group of GOBLINS hiding in the woods, they see you and run away inmediatly. You follow.");
+                }
+                else
+                {
+                    Console.WriteLine("You've chosen path B!");
+                }
+                */
             }
-            else
-            {
-                Console.WriteLine("You've chosen path B!");
-            }
+        }
+        public static void EndGame()
+        {
+            //end of game text
+            Console.WriteLine("End of story text here.....");
+
+            Console.WriteLine("Press enter to exit.");
         }
     }
     class Item
@@ -101,7 +136,7 @@ namespace TextAdventure
         static void Main()
         {
             Game.StartGame();
-            Console.ReadKey();
+            Console.Read();
         }
     }
 }
