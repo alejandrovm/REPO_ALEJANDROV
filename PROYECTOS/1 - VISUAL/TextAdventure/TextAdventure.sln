@@ -1,6 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure", "TextAdventure\TextAdventure.csproj", "{92C22511-080A-4874-97C8-B16BC428ECE5}"
 EndProject
 Global
@@ -9,9 +10,15 @@ Global
 		Release|anycpu = Release|anycpu
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{92C22511-080A-4874-97C8-B16BC428ECE5}.Debug|anycpu.ActiveCfg = Debug|anycpu
-		{92C22511-080A-4874-97C8-B16BC428ECE5}.Debug|anycpu.Build.0 = Debug|anycpu
-		{92C22511-080A-4874-97C8-B16BC428ECE5}.Release|anycpu.ActiveCfg = Release|anycpu
-		{92C22511-080A-4874-97C8-B16BC428ECE5}.Release|anycpu.Build.0 = Release|anycpu
+		{92C22511-080A-4874-97C8-B16BC428ECE5}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{92C22511-080A-4874-97C8-B16BC428ECE5}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{92C22511-080A-4874-97C8-B16BC428ECE5}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{92C22511-080A-4874-97C8-B16BC428ECE5}.Release|anycpu.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {782D851E-F6DF-4758-BCD2-F1F5D07B30EB}
 	EndGlobalSection
 EndGlobal
