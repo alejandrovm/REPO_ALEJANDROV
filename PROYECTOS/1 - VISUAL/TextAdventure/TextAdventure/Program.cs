@@ -4,7 +4,7 @@ by Alejandro Villalobos
 
 The following is a very loose adaptation of the 1st part of 'The Lost Mine of Phandelver',
 entitled 'Goblin Arrows', a 'Wizards of the Coast' module for D&D 5e.
- */
+*/
 
 using System;
 
@@ -53,6 +53,7 @@ namespace TextAdventure
 
             NameCharacter();
             MainStory();
+            Choice();
             EndGame();
         }
 
@@ -73,15 +74,29 @@ namespace TextAdventure
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
             Console.WriteLine("You've been on the Triboar Trail for about half a day. As you come around a bend, you spot two dead horses sprawled about fifty feet ahead of you, blocking the path. Each has several black-feathered arrows sticking out of it. The woods press close to the trail here, with a steep embankment and dense thickets on either side.");
-            Console.WriteLine(CharacterName + " Do you A : approach the dead horses? or B : keep going your way?");
-            Console.WriteLine("Write A or B");
         }
+        static void Choice()
+        {
+            string input = "";
+            Console.WriteLine(CharacterName + " Do you A : approach the dead horses? or B : keep going your way? Write down the letter of your choice");
+            input = Console.ReadLine();
+            if (input == "A")
+            {
+                Console.WriteLine("You've chosen path A!");
+            }
+            else
+            {
+                Console.WriteLine("You've chosen path B!");
+            }
+        }
+
         public static void EndGame()
         {
             //end of game text
             Console.WriteLine("End of story text here.....");
 
             Console.WriteLine("Press enter to exit.");
+            Console.Read();
         }
     }
     class Item
@@ -92,7 +107,6 @@ namespace TextAdventure
         static void Main()
         {
             Game.StartGame();
-            Console.Read();
         }
     }
 }
