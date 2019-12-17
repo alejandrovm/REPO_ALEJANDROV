@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace TextAdventure
 {
-    public static class Game
+    class Game
     {
         //variable declarations
         static string CharacterName = ""; //character name
@@ -71,7 +76,6 @@ namespace TextAdventure
             Choice();
             EndGame();
         }
-
 
         static void NameCharacter() //asks the player for a name for his character, and saves it
         {

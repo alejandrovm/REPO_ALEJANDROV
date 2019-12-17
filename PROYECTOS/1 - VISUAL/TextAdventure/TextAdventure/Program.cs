@@ -7,6 +7,10 @@ entitled 'Goblin Arrows', a 'Wizards of the Coast' module for D&D 5e.
 */
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace TextAdventure
 {
