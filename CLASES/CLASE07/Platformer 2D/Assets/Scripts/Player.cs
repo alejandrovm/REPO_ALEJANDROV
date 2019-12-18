@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rbody2D;
 
     public float speed = 1f;
     public Animator animator;
 
+    // retorna verdadero o falso si esta detenido o en movimiento
     public bool grounded { get { return RoundAbsoluteToZero (rbody2D.velocity.y) == 0f; } }
 
     // Start is called before the first frame update
@@ -23,28 +25,31 @@ public class Player : MonoBehaviour
     void Update()
     {
         float h = Input.GetAxisRaw ("Horizontal") * Time.deltaTime;
-        animator.SetBool ("walk", (h != 0));
-        animator.SetBool ("jump", !grounded);
-        
+        animator.SetBool ("walk", (h != 0)); // al negar se vuelve false y camina
+        animator.SetBool ("jump", !grounded);  //al negar se vuelve false y salta
+        animator.SetFloat ("vertical", Mathf.Sign (rbody2D.velocity.y));
 
         if (h != 0) { spriteRenderer.flipX = (h < 0); }
 
-        if (h > 0)
-            spriteRenderer.flipX = false;
-        else if (h < 0)
-            spriteRenderer.flipX = true;
+        //transform.Translate(Vector3.right * h * speed);
+        MyTranslate (Vector3.right * h * speed);
 
-        transform.Translate (Vector3.right * h * speed);
-
-        if (Input.GetKeyDown (KeyCode.Space))
-            rbody2D.AddForce (Vector2.up * 3, ForceMode2D.Impulse);
+        if (grounded && Input.GetKeyDown (KeyCode.Space))
+            rbody2D.AddForce (Vector2.up * 5, ForceMode2D.Impulse);
     }
 
+    void MyTranslate (Vector3 translateVector)
+    {
+        transform.localPosition += translateVector;
+    }
+
+    // redondear 0.0001 a 0 para determinar si estar detenido o en movimiento
     float RoundAbsoluteToZero (float decimalValue)
     {
         decimalValue = Mathf.Abs (decimalValue);
         if (decimalValue <= 0.01f) {
             decimalValue = 0f;
         }
+        return decimalValue;
     }
 }
