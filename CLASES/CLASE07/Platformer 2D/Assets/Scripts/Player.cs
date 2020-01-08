@@ -6,9 +6,36 @@ public class Player : MonoBehaviour
 {
     public static Player instance;
 
+    //version 1
+    public static void SetPosition (Vector3 pos) {
+        pos.z = 0;
+        instance.transform.position = pos;
+    }
+
+    //version 2
+    public static Vector3 setPosition
+    {
+        set {
+            Vector3 pos = value;
+            pos.z = 0;
+            instance.transform.position = value;
+        }
+    }
+
+    // version 3
+    public static Transform setPosition2
+    {
+        set {
+            Vector3 pos = value.position;
+            pos.z = 0;
+            instance.transform.position = pos;
+        }
+    }
+
     [SerializeField]
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rbody2D;
+    private bool onGround = false;
 
     public float speed = 1f;
     public float jumpForce = 10f;
@@ -16,8 +43,12 @@ public class Player : MonoBehaviour
 
     public Vector3 startPos;
 
-    // retorna verdadero o falso si esta detenido o en movimiento
-    public bool grounded { get { return RoundAbsoluteToZero (rbody2D.velocity.y) == 0f; } }
+    // retorna verdadero o falso si esta detenido o en movimiento, los || significan ó (or)
+    public bool grounded {
+        get {
+            return RoundAbsoluteToZero (rbody2D.velocity.y) == 0f || onGround;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +83,15 @@ public class Player : MonoBehaviour
     {
         if (col.gameObject.tag == "DeathZone") {
             transform.position = startPos;
+        }
+        if (col.gameObject.tag == "Floor") {
+            onGround = true;
+        }
+    }
+
+    void OnCollisionExit2D (Collision2D col) {
+        if (col.gameObject.tag == "Floor") {
+            onGround = false;
         }
     }
 
