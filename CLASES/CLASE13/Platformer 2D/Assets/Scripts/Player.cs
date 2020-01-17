@@ -38,11 +38,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    [SerializeField]
+
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rbody2D;
     private bool onGround = false;
-    [SerializeField]
     private HealthBarController healthBarController;
 
     public float speed = 1f;
@@ -51,8 +50,14 @@ public class Player : MonoBehaviour
 
     public Vector3 startPos;
 
+    [Header("Life")]
     public float maxLife = 50;
+    [Range(0f, 50)]
     public float currentLife = 50;
+
+    [Header("Attack")]
+    [Tooltip("Bullet Prefab")]
+    public GameObject bullet;
 
     // retorna verdadero o falso si esta detenido o en movimiento, los || significan ó (or)
     public bool grounded {
@@ -97,6 +102,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown (KeyCode.P))
             Heal (1);
+
+        if (Input.GetKeyDown (KeyCode.LeftShift))
+            Attack ();
+
+        if (Input.GetKeyDown (KeyCode.CapsLock))
+            FastAttack ();
     }
 
     void OnCollisionEnter2D (Collision2D col)
@@ -142,4 +153,16 @@ public class Player : MonoBehaviour
         healthBarController.currentLife = currentLife;
     }
 
+    void Attack ()
+    {
+        Instantiate<GameObject> (bullet, transform.position, Quaternion.identity);
+    }
+
+    void FastAttack()
+    {
+        GameObject clone = Instantiate<GameObject> (bullet, transform.position, Quaternion.identity);
+
+        BulletRock bulletRock = clone.GetComponent<BulletRock> ();
+        bulletRock.Init (10f);
+    }
 }

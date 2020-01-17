@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BulletRock.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Finish.cs" />
      <Compile Include="Assets\Scripts\HealthBarController.cs" />
@@ -62,31 +63,31 @@
      <Compile Include="Assets\Scripts\Level2Manager.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE12/Platformer 2D/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE13/Platformer 2D/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE12/Platformer 2D/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE13/Platformer 2D/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE12/Platformer 2D/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE13/Platformer 2D/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE12/Platformer 2D/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE13/Platformer 2D/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE12/Platformer 2D/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE13/Platformer 2D/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE12/Platformer 2D/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE13/Platformer 2D/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE12/Platformer 2D/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE13/Platformer 2D/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE12/Platformer 2D/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE13/Platformer 2D/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE12/Platformer 2D/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/Windows  8/Desktop/REPO_ALEJANDROV/CLASES/CLASE13/Platformer 2D/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

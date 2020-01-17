@@ -257,14 +257,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f52d8ad97bde334dad8080bf26d41b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  healthBarController: {fileID: 0}
   speed: 3
   jumpForce: 7
   animator: {fileID: 28246814}
   startPos: {x: 0, y: 0, z: 0}
   maxLife: 50
   currentLife: 0
+  bullet: {fileID: 9007786312728971318, guid: ca8356dbaa8a5114397620e244a45ac3, type: 3}
 --- !u!70 &28246818
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
