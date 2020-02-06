@@ -12,16 +12,19 @@ namespace Topdown
         Vector3 endPos;
         Vector3 point;
         Vector3 origin;
-        public Vector2[] points;
 
-    // Start is called before the first frame update
-    void Start()
+        public Vector2[] points;
+        public float speed = 1f;
+        public ActionArea player;
+
+        // Start is called before the first frame update
+        void Start()
     {
             currentIndex = 0;
             point = points[currentIndex];
-            origin = startPos;
-            startPos = transform.position;
-            endPos = startpos + point;
+            origin = transform.position; 
+            startPos = origin;
+            endPos = origin + point;
             
     }
 
@@ -29,7 +32,17 @@ namespace Topdown
     void Update()
     {
             transform.position = Vector3.Lerp(startPos, endPos, t);
-            t += Time.deltatime;
+            t += Time.deltatime * speed;
+
+            if (Vector3.Distance(transform.position, player.transform.position) <= player.radius)
+            {
+                speed *= 2f;
+            }
+            else
+            {
+                float distance = Vector3.Distance(startPos, endPos);
+                speed = 2f / distance;
+            }
 
             if (t >= 1f)
             {
@@ -43,10 +56,13 @@ namespace Topdown
                 }
                 else
                 {
-
+                    point = points[currentIndex];
                 }
                
                 endPos = origin + point;
+
+                float distance = Vector3.Distance(startPos, endPos);
+                speed = 2f / distance;
 
                 t = 0;
             }
@@ -55,24 +71,24 @@ namespace Topdown
 
     private void OnDrawGizmos()
     {
-            if (startpos != transform.position && !Application.IsPlaying)
-                startpos = transform.position;
+            if (!Application.isPlaying && origin != transform.position)
+                origin = transform.position;
 
         Vector3 point = points[0];
-        Debug.DrawLine(transform.position, transform.position + point, Color.cyan);
-        
-        for(int i = 1; i < points.Length; i++)
+        Debug.DrawLine(origin, origin + point, Color.cyan);
+
+            for (int i = 1; i < points.Length; i++)
             {
                 point = points[i - 1];
-                Vector3 start = transform.position + point;
+                Vector3 start = origin + point;
 
                 point = points[i];
-                Vector3 end = transform.position + point;
+                Vector3 end = origin + point;
                 Debug.DrawLine(start, end, Color.cyan);
             }
 
             point = points[points.Length-1];
-            Debug.DrawLine(transform.position + point, transform.position, Color.cyan);
+            Debug.DrawLine(origin + point, origin, Color.cyan);
         }
 
 }
