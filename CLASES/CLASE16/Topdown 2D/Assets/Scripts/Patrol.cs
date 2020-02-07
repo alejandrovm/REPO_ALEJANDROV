@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Topdown.AI;
 
 namespace Topdown
 {
@@ -10,69 +11,87 @@ namespace Topdown
         float t = 0f;
         Vector3 startPos;
         Vector3 endPos;
-        Vector3 point;
-        Vector3 origin;
-        public Vector2[] points;
+        List<Vector3> points;
+        
+        public float speed = 1f;
 
-    // Start is called before the first frame update
-    void Start()
+        public ActionArea player;
+        public Path path;
+        // Start is called before the first frame update
+        void Start()
     {
             currentIndex = 0;
-            point = points[currentIndex];
-            origin = startPos;
-            startPos = transform.position;
-            endPos = startpos + point;
-            
-    }
+            points = path.points;
+            startPos = points[0];
+            endPos = points[1];
+
+
+        }
 
     // Update is called once per frame
     void Update()
     {
             transform.position = Vector3.Lerp(startPos, endPos, t);
-            t += Time.deltatime;
+            t += Time.deltaTime * speed;
 
+            
             if (t >= 1f)
             {
-                startpos = endPos;
                 currentIndex++;
 
-                if (currentIndex >= points.Lenght)
+                if (currentIndex >= points.Count)
                 {
-                    currentIndex = -1;
-                    point = Vector3.zero;
+                    OnFinishPath();
                 }
-                else
-                {
 
-                }
-               
-                endPos = origin + point;
+                startPos = endPos;
+                currentIndex++;
+                endPos = points[currentIndex];
+
+                float distance = Vector3.Distance(startPos, endPos);
+                speed = 2f / distance;
 
                 t = 0;
             }
-                
+               
     }
 
-    private void OnDrawGizmos()
-    {
-            if (startpos != transform.position && !Application.IsPlaying)
-                startpos = transform.position;
-
-        Vector3 point = points[0];
-        Debug.DrawLine(transform.position, transform.position + point, Color.cyan);
-        
-        for(int i = 1; i < points.Length; i++)
+        private void OnFinishPath()
+        {
+            switch (path.type)
             {
-                point = points[i - 1];
-                Vector3 start = transform.position + point;
+                case PathType.loop:
+                    currentIndex = 0;
+                    if (!path.isClose)
+                    {
+                        endPos = points[currentIndex];
+                        transform.position = endPos;
+                    }
+                    break;
 
-                point = points[i];
-                Vector3 end = transform.position + point;
-                Debug.DrawLine(start, end, Color.cyan);
+                case PathType.pingpong:
+                    if (!path.isClose)
+                    {
+                        endPos = points[currentIndex];
+                        transform.position = endPos;
+                    }
+                    else
+                    {
+                        points.Reverse();
+                        currentIndex = 0;
+                    }
+
+                    //   speed *= -1; // speed = -speed;
+
+                    break;
             }
 
-            point = points[points.Length-1];
-            Debug.DrawLine(transform.position + point, transform.position, Color.cyan);
+            if (path.isClose)
+            {
+                currentIndex = 0;
+            }
+
+
         }
 
 }
