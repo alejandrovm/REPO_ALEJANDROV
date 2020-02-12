@@ -64,10 +64,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ActionArea.cs" />
+    <Compile Include="Assets\Scripts\Attack.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enums.cs" />
     <Compile Include="Assets\Scripts\HeartBar.cs" />
     <Compile Include="Assets\Scripts\MovePointClick.cs" />
     <Compile Include="Assets\Scripts\Path.cs" />
     <Compile Include="Assets\Scripts\Patrol.cs" />
+    <Compile Include="Assets\Scripts\Projectile.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Alumno/Desktop/REPO_ALEJANDROV/CLASES/CLASE16/Topdown 2D/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

@@ -23,7 +23,7 @@ namespace Topdown {
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetMouseButtonDown(0) && state == State.idle))
+            if (Input.GetMouseButtonDown(0) && state == State.idle)
             {
                 Vector3 pos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
                 pos.z = 0;
