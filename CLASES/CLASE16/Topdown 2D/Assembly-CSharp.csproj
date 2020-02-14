@@ -65,6 +65,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ActionArea.cs" />
     <Compile Include="Assets\Scripts\Attack.cs" />
+    <Compile Include="Assets\Scripts\AttackController.cs" />
+    <Compile Include="Assets\Scripts\AttackModel.cs" />
+    <Compile Include="Assets\Scripts\AttackView.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enums.cs" />
     <Compile Include="Assets\Scripts\HeartBar.cs" />
