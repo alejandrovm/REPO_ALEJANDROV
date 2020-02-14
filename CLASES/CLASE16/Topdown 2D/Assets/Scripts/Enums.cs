@@ -4,5 +4,9 @@ using UnityEngine;
 
 namespace Topdown
 {
-
+    public enum ElementType
+    {
+        fire,
+        ice
+    }
 }

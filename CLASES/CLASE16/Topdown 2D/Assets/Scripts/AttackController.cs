@@ -22,8 +22,6 @@ namespace Topdown
             if (Input.GetKeyDown(KeyCode.KeypadPlus))
                 model.currentAttack++;
 
-            model.currentAttack = Mathf.Clamp(model.currentAttack, 0, model.attacks.Count - 1);
-
             if (Input.GetKeyDown(KeyCode.Space))
                 Shoot(model.currentAttack);
         }

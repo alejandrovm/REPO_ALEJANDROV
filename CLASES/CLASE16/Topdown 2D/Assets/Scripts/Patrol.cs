@@ -69,26 +69,15 @@ namespace Topdown
                     break;
 
                 case PathType.pingpong:
-                    if (!path.isClose)
-                    {
-                        endPos = points[currentIndex];
-                        transform.position = endPos;
-                    }
-                    else
-                    {
+
                         points.Reverse();
                         currentIndex = 0;
-                    }
 
-                    //   speed *= -1; // speed = -speed;
 
                     break;
             }
 
-            if (path.isClose)
-            {
-                currentIndex = 0;
-            }
+
         }
 
     }
