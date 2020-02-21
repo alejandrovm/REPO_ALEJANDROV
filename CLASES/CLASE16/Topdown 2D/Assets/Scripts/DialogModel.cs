@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Topdown.dialog
+namespace Topdown.Dialog
 {
     public class DialogModel : MonoBehaviour
     {
@@ -33,10 +33,44 @@ namespace Topdown.dialog
             
         }
 
-        // Update is called once per frame
-        void Update()
+        public string GetTextByDialogId(int id)
         {
-            
+            return GetTextByDialog(dialogs[id]);
+        }
+
+        public string GetTextByDialog(Dialog d)
+        {
+            return textList[d.text];
+        }
+
+        public Sprite GetFaceByDialogId(int id)
+        {
+            return GetFaceByDialog(dialogs[id]);
+        }
+
+        public Sprite GetFaceByDialog(Dialog d)
+        {
+            return faceList[d.face];
+        }
+
+        public bool IsEndById(int id)
+        {
+            return IsEndByDialog(dialogs[id]);
+        }
+
+        public bool IsEndByDialog(Dialog d)
+        {
+            return (d.next == -1);
+        }
+
+        public int GetNextById(int id)
+        {
+            return GetNextByDialog(dialogs[id]);
+        }
+ 
+        public int GetNextByDialog(Dialog d)
+        {
+            return d.next;
         }
     }
 }

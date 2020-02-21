@@ -2,16 +2,78 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Topdown.dialog
+namespace Topdown.Dialog
 {
     public class DialogController : MonoBehaviour
     {
         static private DialogController instance;
 
-        // Start is called before the first frame update
+        static public void Show(int index)
+        {
+            instance.ShowDialog();
+            instance.LoadDialog(index);
+        }
+
+        static public void Hide()
+        {
+            instance.HideDialog();
+        }
+
+        static public void Next()
+        {
+            instance.Next(instance.nextDialogId);
+        }
+
+        private DialogModel model;
+        private DialogView view;
+
+        private int nextDialogId = -1;
+
+        void Awake()
+        {
+            instance = this;
+            model = GetComponent<DialogModel>();
+            view = GetComponent<DialogView>();
+        }
+
         void Start()
         {
             view.Init(model);
+            HideDialog();
         }
+
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+                HideDialog();
+        }
+
+        private void ShowDialog()
+        {
+            view.Show();
+        }
+
+        private void HideDialog()
+        {
+            view.Hide();
+        }
+
+        private void LoadDialog(int index)
+        {
+            view.ShowText(model.GetTextByDialogId(index));
+            view.ShowFace(model.GetFaceByDialogId(index));
+            view.ShowArrow(model.IsEndById(index));
+
+            nextDialogId = model.GetNextById(index);
+        }
+
+        private void Next (int index)
+        {
+            if (index >= 0)
+                LoadDialog(index);
+            else
+                HideDialog();
+        }
+
     }
 }

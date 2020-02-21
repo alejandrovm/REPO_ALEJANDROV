@@ -2,35 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Talk : MonoBehaviour
-{
-    private GameObject NPC = null;
-
-    // Start is called before the first frame update
-    void Start()
+namespace Topdown.Dialog {
+    public class Talk : MonoBehaviour
     {
-        
-    }
+        private GameObject NPC = null;
 
-    // Update is called once per frame
-    void Update()
-    {
-     if (Input.GetKeyDown(KeyCode.E))
-     {
-         if (NPC != null)
-         DialogController.Show();
-     }   
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
+            
+        }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "NPC")
-        NPC = collision.gameObject;
-    }
+        // Update is called once per frame
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (NPC != null)
+                DialogController.Show(0);
+            }   
 
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "NPC")
-        NPC = null;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (NPC != null)
+                DialogController.Next();
+            }  
+        }
+
+        void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.tag == "NPC")
+            NPC = collision.gameObject;
+        }
+
+        void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.tag == "NPC")
+            NPC = null;
+        }
     }
 }
