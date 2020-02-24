@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MyPlatformer
+namespace My2DPlatformer
 {
     public class PlayerController : MonoBehaviour
     {
+        public Vector2 startPosition;
+
         [Header("Horizontal Movement")]
         public float _speed = 10f;
         public Vector2 direction;
@@ -35,7 +37,7 @@ namespace MyPlatformer
         // Start is called before the first frame update
         void Start()
         {
-
+            transform.position = startPosition;
         }
 
         // Update is called once per frame
@@ -64,6 +66,14 @@ namespace MyPlatformer
             }
 
             modifyPhysics();
+        }
+
+        void OnCollisionEnter2D(Collision2D col)
+        {
+            if (col.gameObject.tag == "DeathZone")
+            {
+                transform.position = startPosition;
+            }
         }
 
         void moveCharacter(float horizontal)
