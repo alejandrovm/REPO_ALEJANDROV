@@ -6,6 +6,8 @@ namespace My2DPlatformer
 {
     public class PlayerController : MonoBehaviour
     {
+        public static PlayerController instance;
+
         public Vector2 startPosition;
 
         [Header("Horizontal Movement")]
