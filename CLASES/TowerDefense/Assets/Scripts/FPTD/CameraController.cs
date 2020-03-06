@@ -29,7 +29,7 @@ namespace FPTD
             angleX += angle;
             angleX = Mathf.Clamp(angleX, -60f, 60f);
 
-            transform.rotation = Quaternion.Euler(Vector3.right * angleX);
+            transform.localRotation = Quaternion.Euler(Vector3.right * angleX);
         }
     }
 }

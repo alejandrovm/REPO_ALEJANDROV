@@ -6,6 +6,23 @@ namespace FPTD
 {
     public class Path : MonoBehaviour
     {
+        static public Path instance;
+        static public Node startNode
+        {
+            get
+            {
+                return instance.start;
+            }
+        }
+
+        static public Node finishNode
+        {
+            get
+            {
+                return instance.finish;
+            }
+        }
+
         public List<Node> nodes = new List<Node>();
         
         public Node start 
@@ -31,13 +48,18 @@ namespace FPTD
                 return nodes.Count;
             }
         }
-        // Start is called before the first frame update
-        void Start()
+
+        #region Unity Events
+
+        void Awake()
         {
+            instance = this;
             foreach (Transform child in transform)
             {
-                Node n = new Node();
+                Node n = new Node(child.position);
                 n.name = child.name;
+               
+                transform.GetChild(child.GetSiblingIndex());
                 AddNode(n);
             }
             PrintNodes();
@@ -59,6 +81,7 @@ namespace FPTD
                 Gizmos.DrawLine(transform.GetChild(i-1).position, transform.GetChild(i).position);
             }
         }
+        #endregion
 
         private void PrintNodes()
         {
