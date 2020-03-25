@@ -425,7 +425,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &769211000
 GameObject:
@@ -550,11 +550,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1fe6afc6fad96489515de0142be7d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 003cf600a79d14fe6bac456772786b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   invert: 0
-  smooth: 100
+  smooth: 10
 --- !u!1 &982413891
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,9 +581,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 982413891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ed0f1576ddf9a3478170604ea17889b, type: 3}
+  m_Script: {fileID: 11500000, guid: 575d3fab548654226b31b615555badb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  json: {fileID: 0}
+  myPath:
+    nodes: []
+    exits: []
 --- !u!4 &982413893
 Transform:
   m_ObjectHideFlags: 0
@@ -711,7 +715,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1280444111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 548bbd5f80f9005408990ffb7f57f477, type: 3}
+  m_Script: {fileID: 11500000, guid: 988c57b2338924517b3dd03abf3fab30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
@@ -821,13 +825,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4002324549468373610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e872801658c566b4ba13489fd9d1d1fd, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 10
-  speed: 1
-  minDmg: 1
-  maxDmg: 3
 --- !u!1001 &4211199343190298419
 PrefabInstance:
   m_ObjectHideFlags: 0

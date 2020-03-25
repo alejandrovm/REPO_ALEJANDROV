@@ -5,7 +5,7 @@ using UnityEditor;
 
 namespace FPTD
 {
-    [UnityEditor.CustomEditor(typeof(Path))]
+    [CustomEditor(typeof(Path))]
     public class PathEditor : Editor
     {
         Path myPath;
@@ -18,6 +18,15 @@ namespace FPTD
 
             if (GUILayout.Button("Create Node"))
                 ((Path)target).GenerateNodes();
+
+            if (GUILayout.Button("Create Nodes"))
+            {
+                myPath.DeleteAllNodes();
+                myPath.GenerateFromMatrix();
+            }
+
+            if (GUILayout.Button("Load json"))
+                myPath.LoadJson();
         }
     }
 }

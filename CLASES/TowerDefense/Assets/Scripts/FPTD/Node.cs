@@ -37,7 +37,7 @@ namespace FPTD
 
         public Node GetRandomExit()
         {
-            return exits[Random.Range(0, exits.Count)];
+            return exits.Count == 0 ? null : exits[Random.Range(0, exits.Count)];
         }
     }
 }
